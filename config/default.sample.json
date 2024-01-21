@@ -1,0 +1,26 @@
+{
+	"version": 1,
+	"env": {
+		"appKey": "test",
+		"jwtAlgorithm": "HS256",
+		"passwordSaltRounds": 10
+	},
+	"http": {
+		"host": "::",
+		"port": 3000
+	},
+	"db": {
+		"name": "db",
+		"username": "root",
+		"password": "toor",
+		"host": "mysql"
+	},
+	"logger": {
+		"appenders": {
+			"console": { "type": "console" }
+		},
+		"categories": {
+			"default": { "appenders": ["console"], "level": "all" }
+		}
+	}
+}
