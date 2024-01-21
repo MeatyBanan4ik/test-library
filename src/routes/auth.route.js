@@ -10,7 +10,12 @@ import requiredHttpMiddleware from '../handlers/http/middlewares/required.http.m
 
 const router = Router();
 
-router.post('/login', callHttpMiddleware(AuthHttpHandler, 'login'));
+router.post(
+	'/login',
+	requiredHttpMiddleware('username'),
+	requiredHttpMiddleware('password'),
+	callHttpMiddleware(AuthHttpHandler, 'login'),
+);
 router.post(
 	'/register',
 	requiredHttpMiddleware('username'),
