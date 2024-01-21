@@ -78,6 +78,20 @@
 				},
 				{
 					"name": "Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.globals.set('access_token', data.data.access_token);",
+									"pm.globals.set('refresh_token', data.data.refresh_token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -126,6 +140,16 @@
 								{
 									"key": "sort[id]",
 									"value": "ASC",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
 									"disabled": true
 								}
 							]
@@ -262,6 +286,16 @@
 								{
 									"key": "sort[id]",
 									"value": "ASC",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
 									"disabled": true
 								}
 							]
